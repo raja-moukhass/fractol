@@ -1,6 +1,6 @@
 # fractol
 This project is meant to create graphically beautiful fractals
-## sources
+### sources
 - https://github.com/keuhdall/images_example
 - https://github.com/qst0/ft_libgfx
 - http://sdz.tdct.org/sdz/dessiner-la-fractale-de-mandelbrot.html?fbclid=IwAR0abKda4KXEbe7Cle1rxME04v48rH4WvZR10jhebNGEQd2yZVU0bfX2mN0
@@ -13,3 +13,8 @@ This project is meant to create graphically beautiful fractals
 - https://jonisalonen.com/2013/lets-draw-the-mandelbrot-set/
 - http://sdz.tdct.org/sdz/dessiner-la-fractale-de-mandelbrot.html?fbclid=IwAR0abKda4KXEbe7Cle1rxME04v48rH4WvZR10jhebNGEQd2yZVU0bfX2mN0
 
+### videos sources
+- https://youtu.be/Y4ICbYtBGzA (FR)
+- https://youtu.be/iFA3g_4myFw (FR)
+- https://youtu.be/2JUAojvFpCo (EN)
+- https://youtu.be/MwjsO6aniig (EN)
