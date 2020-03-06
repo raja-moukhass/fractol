@@ -12,6 +12,7 @@ This project is meant to create graphically beautiful fractals
 - http://warp.povusers.org/Mandelbrot/
 - https://jonisalonen.com/2013/lets-draw-the-mandelbrot-set/
 - http://sdz.tdct.org/sdz/dessiner-la-fractale-de-mandelbrot.html?fbclid=IwAR0abKda4KXEbe7Cle1rxME04v48rH4WvZR10jhebNGEQd2yZVU0bfX2mN0
+- https://qst0.github.io/ft_libgfx/man_mlx_new_window.html (man)
 
 ### videos sources
 - https://youtu.be/Y4ICbYtBGzA (FR)
