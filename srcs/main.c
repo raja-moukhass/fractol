@@ -6,7 +6,7 @@
 /*   By: ramoukha <moraja858@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 14:35:15 by ramoukha          #+#    #+#             */
-/*   Updated: 2020/03/08 14:44:59 by ramoukha         ###   ########.fr       */
+/*   Updated: 2020/03/08 15:10:16 by ramoukha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,21 +52,48 @@ void	draw_mandelbrot(t_frac *f)
 				iteration++;
 			}
 			if (iteration < draw.max)
-				f->mlx.data[row * WIDTH + col] = iteration * 51151;
+				f->mlx.data[row * WIDTH + col] = iteration *5115551;
+			else f->mlx.data[row * WIDTH + col] = 0;
+		}
+	}
+}
+
+void	draw_burningship(t_frac *f)
+{
+	t_draw draw;
+	draw.max = 50;
+
+	for (int row = 0; row < HEIGHT; row++)
+	{
+		for (int col = 0; col < WIDTH; col++)
+		{
+			double c_re = (col - WIDTH/2.0)*4.0/WIDTH;
+			double c_im = (row - HEIGHT/2.0)*4.0/WIDTH;
+			double x = 0, y = 0;
+			int iteration = 0;
+			while (x*x+y*y <= 4 && iteration < draw.max) {
+				double x_new = x*x - y*y + c_re;
+				y = -2*x*y + c_im;
+				x = x_new;
+				iteration++;
+			}
+			if (iteration < draw.max)
+				f->mlx.data[row * WIDTH + col] = 515112 * iteration;
 			else f->mlx.data[row * WIDTH + col] = 0;
 		}
 	}
 }
 
 
+
 void	draw(t_frac *f)
 {
 	if (f->type == 1)
 		draw_mandelbrot(f);
-	// if (f.type == 2)
+	//if (f.type == 2)
 	// 	draw_julia(f);
-	// if (f.type == 3)
-	// 	draw_burningship(f);
+	if (f->type == 3)
+		draw_burningship(f);
 }
 
 
