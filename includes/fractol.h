@@ -12,20 +12,18 @@
 # define WIDTH 700
 # define HEIGHT 700
 
-typedef struct s_image
-{
-	void	*img_ptr;
-	int		*data;
-	int		size_l;
-	int		bpp;
-	int		endian;
-}				t_image;
+
 
 typedef struct s_mlx
 {
 	void	*mlx_ptr;
 	void	*mlx_win;
-	t_image	image;
+	void	*img_ptr;
+	int		*data;
+	int		size_l;
+	int		bpp;
+	int		endian;
+
 }				t_mlx;
 
 typedef struct s_frac
@@ -33,8 +31,26 @@ typedef struct s_frac
 	t_mlx	mlx;
 	int		type;
 }				t_frac;
+typedef struct s_draw
+{
+	int row;
+	int height;
+	int width;
+	double c_re;
+	double c_im;
+	double x;
+	double y;
+	int iterations;
+	double x_new;
+	int col;
+	int max;
+} t_draw;
 
 #endif
+
+
+
+// #endif
 // mandelbrot julia burningship
 // type :
 // mandelbrot = 1
@@ -57,4 +73,3 @@ typedef struct s_frac
 //                 else image.setRGB(col, row, black);
 //             }
 //         }
-                                                                                                                                                                                                                                                                                                                              mnm
