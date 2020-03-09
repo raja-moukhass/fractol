@@ -6,7 +6,7 @@
 /*   By: ramoukha <moraja858@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 14:35:15 by ramoukha          #+#    #+#             */
-/*   Updated: 2020/03/08 15:10:16 by ramoukha         ###   ########.fr       */
+/*   Updated: 2020/03/09 13:58:08 by ramoukha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,24 +36,28 @@ void	draw_mandelbrot(t_frac *f)
 {
 	t_draw draw;
 	draw.max = 50;
-
-	for (int row = 0; row < HEIGHT; row++)
+	int row;
+	row = -1;
+	int col;
+	//col = -1;
+	while( ++row < HEIGHT)
 	{
-		for (int col = 0; col < WIDTH; col++)
+		col = -1;
+		while (++col < WIDTH)
 		{
-			double c_re = (col - WIDTH/2.0)*4.0/WIDTH;
-			double c_im = (row - HEIGHT/2.0)*4.0/WIDTH;
+			 draw.c_re = (col - WIDTH/2.0)*4.0/WIDTH;
+			 draw.c_im = (row - HEIGHT/2.0)*4.0/WIDTH;
 			double x = 0, y = 0;
 			int iteration = 0;
 			while (x*x+y*y <= 4 && iteration < draw.max) {
-				double x_new = x*x - y*y + c_re;
-				y = 2*x*y + c_im;
-				x = x_new;
+				 draw.x_new = x*x - y*y + draw.c_re;
+				y = 2*x*y + draw.c_im;
+				x = draw.x_new;
 				iteration++;
 			}
 			if (iteration < draw.max)
-				f->mlx.data[row * WIDTH + col] = iteration *5115551;
-			else f->mlx.data[row * WIDTH + col] = 0;
+				f->mlx.data[row * WIDTH + col] = 15213899 * iteration ;
+			else f->mlx.data[row * WIDTH + col] =0;
 		}
 	}
 }
