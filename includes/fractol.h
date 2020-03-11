@@ -9,8 +9,8 @@
 # include <math.h>
 # include <stdlib.h>
 
-# define WIDTH 700
-# define HEIGHT 700
+# define WIDTH 1000
+# define HEIGHT 1000
 
 
 
@@ -26,16 +26,13 @@ typedef struct s_mlx
 
 }				t_mlx;
 
-typedef struct s_frac
-{
-	t_mlx	mlx;
-	int		type;
-}				t_frac;
+
 typedef struct s_draw
 {
 	int row;
 	int height;
 	int width;
+	
 	double c_re;
 	double c_im;
 	double x;
@@ -46,30 +43,63 @@ typedef struct s_draw
 	int max;
 } t_draw;
 
+typedef struct s_frac
+{
+	t_mlx	mlx;
+	int		type;
+	int key;
+	int key2;
+	int test;
+	t_draw draw;
+	
+
+}				t_frac;
+
+
+void	draw_mandelbrot(t_frac *f);
 #endif
 
 
-
-// #endif
-// mandelbrot julia burningship
-// type :
-// mandelbrot = 1
-// julia = 2
-// burningship = 3
-
-// for (int row = 0; row < height; row++) {
-//             for (int col = 0; col < width; col++) {
-//                 double c_re = (col - width/2)*4.0/width;
-//                 double c_im = (row - height/2)*4.0/width;
-//                 double x = 0, y = 0;
-//                 int iterations = 0;
-//                 while (x*x+y*y < 4 && iterations < max) {
-//                     double x_new = x*x-y*y+c_re;
-//                     y = 2*x*y+c_im;
-//                     x = x_new;
-//                     iterations++;
-//                 }
-//                 if (iterations < max) image.setRGB(col, row, white);
-//                 else image.setRGB(col, row, black);
-//             }
+// static int      ft_move(int keycode, t_mlx *mlx)
+// {
+//         double  c;
+//         c = ((MAXX - MINX) / WIN_W) * 10;
+//         if (keycode == 123)
+//         {
+//                 MINX += c;
+//                 MAXX += c;
 //         }
+//         else if (keycode == 124)
+//         {
+//                 MINX -= c;
+//                 MAXX -= c;
+//         }
+//         else if (keycode == 125)
+//         {
+//                 MINY -= c;
+//                 MAXY -= c;
+//         }
+//         else if (keycode == 126)
+//         {
+//                 MINY += c;
+//                 MAXY += c;
+//         }
+//         return (0);
+// }
+// static int      ft_julia(t_mlx *mlx, int x, int y)
+//  {
+//          t_f             *f;
+//          int             i;
+//          double  tmp;
+//          f = mlx->f;
+//          i = -1;
+//          f->pr = MINX + ((double)x * (MAXX - MINX) / WIN_W);
+//          f->pi = MINY + ((double)y * (MAXY - MINY) / WIN_H);
+//          while (++i < mlx->iter && (f->pr * f->pr + f->pi * f->pi) < 4)
+//          {
+//                  tmp = f->pr;
+//                  f->pr = f->pr * f->pr - f->pi * f->pi + f->cr;
+//                  f->pi = 2 * f->pi * tmp + f->ci;
+//          }
+//          return (i);
+//  
