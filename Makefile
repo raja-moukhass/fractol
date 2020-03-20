@@ -22,7 +22,9 @@ all : $(NAME)
 $(NAME): $(OB)
 	make -C libft/
 	$(COMP) -c $(SRC)
-	$(COMP) -g -o $(NAME) $(OB) libft/libft.a -L /usr/local/lib -lmlx -framework OpenGL -framework appKit 
+	$(COMP) -g -o $(NAME) $(OB) -L ./libft -lft -lpthread -L ./miniLibX -lmlx -framework OpenGL -framework AppKit
+
+
 	@printf "\033[00;32m"
 	@printf "BINARY CREATED\n"
 	@printf "\033[00;0m"

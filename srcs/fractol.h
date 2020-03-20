@@ -1,16 +1,13 @@
-#ifndef FRACTOL_H
-# define FRACTOL_H
-
-#include "../libft/libft.h"
-#include <stdio.h>
-
-# include <mlx.h>
-# include <fcntl.h>
-# include <math.h>
-# include <stdlib.h>
-
-# define WIDTH 1000
-# define HEIGHT 1000
+ #ifndef FRACTOL_H
+ # define FRACTOL_H
+ # include "../libft/libft.h"
+ # include "../miniLibX/mlx.h"
+ # include <pthread.h>
+ # include <fcntl.h>
+ # include <math.h>
+ # include <stdlib.h>
+ # define WIDTH 700
+ # define HEIGHT 700
 
 
 

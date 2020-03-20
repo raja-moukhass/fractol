@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fractol.h"
+#include "../srcs/fractol.h"
 
 void		show_usage(void)
 {
