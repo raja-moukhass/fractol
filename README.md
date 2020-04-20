@@ -18,4 +18,5 @@ This project is meant to create graphically beautiful fractals
 - https://youtu.be/Y4ICbYtBGzA (FR)
 - https://youtu.be/iFA3g_4myFw (FR)
 - https://youtu.be/2JUAojvFpCo (EN)
+
 - https://youtu.be/MwjsO6aniig (EN)
