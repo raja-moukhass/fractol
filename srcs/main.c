@@ -115,11 +115,6 @@ void	draw_burningship(t_frac *f)
 	}
 }
 
-
-
-
-
-
 void	ft_draw(t_frac *f)
 {
 	if (f->type == 1)
@@ -132,6 +127,7 @@ void	ft_draw(t_frac *f)
 
 
 int		main(int ac, char **av)
+
 {
 	t_frac	f;
 	//\t_draw draw;
@@ -149,6 +145,5 @@ int		main(int ac, char **av)
 	mlx_put_image_to_window(f.mlx.mlx_ptr, f.mlx.mlx_win, f.mlx.img_ptr, 0, 0);
 	mlx_hook(f.mlx.mlx_win, 17, 0 ,ft_close, &f);
 	mlx_hook( f.mlx.mlx_win, 2, 0,ft_key_perssed,&f);
-	
 	mlx_loop(f.mlx.mlx_ptr);
 }
