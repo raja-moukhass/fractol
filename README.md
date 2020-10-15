@@ -14,6 +14,7 @@ This project is meant to create graphically beautiful fractals
 - http://sdz.tdct.org/sdz/dessiner-la-fractale-de-mandelbrot.html?fbclid=IwAR0abKda4KXEbe7Cle1rxME04v48rH4WvZR10jhebNGEQd2yZVU0bfX2mN0
 - https://qst0.github.io/ft_libgfx/man_mlx_new_window.html (man)
 - https://stackoverflow.com/questions/41796832/smooth-zoom-with-mouse-in-mandelbrot-set-c (zoom)
+- https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_makefiles.html#using (makefile)
 ### videos sources
 - https://youtu.be/Y4ICbYtBGzA (FR)
 - https://youtu.be/iFA3g_4myFw (FR)
