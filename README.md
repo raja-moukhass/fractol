@@ -15,6 +15,7 @@ This project is meant to create graphically beautiful fractals
 - https://qst0.github.io/ft_libgfx/man_mlx_new_window.html (man)
 - https://stackoverflow.com/questions/41796832/smooth-zoom-with-mouse-in-mandelbrot-set-c (zoom)
 - https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_makefiles.html#using (makefile)
+- https://www.tenouk.com/ModuleW.html
 ### videos sources
 - https://youtu.be/Y4ICbYtBGzA (FR)
 - https://youtu.be/iFA3g_4myFw (FR)
