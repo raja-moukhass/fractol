@@ -17,6 +17,7 @@ This project is meant to create graphically beautiful fractals
 - https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_makefiles.html#using (makefile)
 - https://www.tenouk.com/ModuleW.html
 - https://www.geeksforgeeks.org/cc-preprocessors/
+-https://www.tenouk.com/ModuleZ.html
 ### videos sources
 - https://youtu.be/Y4ICbYtBGzA (FR)
 - https://youtu.be/iFA3g_4myFw (FR)
