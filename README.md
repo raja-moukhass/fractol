@@ -18,6 +18,7 @@ This project is meant to create graphically beautiful fractals
 - https://www.tenouk.com/ModuleW.html
 - https://www.geeksforgeeks.org/cc-preprocessors/
 - https://www.tenouk.com/ModuleZ.html
+- https://www.tenouk.com/Sitemap.html
 ### videos sources
 - https://youtu.be/Y4ICbYtBGzA (FR)
 - https://youtu.be/iFA3g_4myFw (FR)
