@@ -6,7 +6,7 @@
 #    By: ramoukha <ramoukha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/12 12:17:42 by ramoukha          #+#    #+#              #
-#    Updated: 2020/02/29 19:20:55 by ramoukha         ###   ########.fr        #
+#    Updated: 2020/10/23 13:34:40 by ramoukha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,13 @@ OB =  main.o
 INC = includes/fractol.h
 OB = $(SRC:.c=.o)
 NAME =  fractol
-
+LIBFLAGS = -L ./libft -lft -lpthread -L ./miniLibX -lmlx -framework OpenGL -framework AppKit
 all : $(NAME)
 
 $(NAME): $(OB)
 	make -C libft/
 	$(COMP) -c $(SRC)
-	$(COMP) -g -o $(NAME) $(OB) -L ./libft -lft -lpthread -L ./miniLibX -lmlx -framework OpenGL -framework AppKit
+	$(COMP) -g -o $(NAME) $(OB) $(LIBFLAGS)
 
 
 	@printf "\033[00;32m"
@@ -44,6 +44,4 @@ fclean: clean
 	@printf "\033[00;32m"
 	@printf "BINARY REMOVED\n"
 	@printf "\033[00;0m"
-
-
 re: fclean all
