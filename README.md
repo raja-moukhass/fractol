@@ -14,6 +14,7 @@ This project is meant to create graphically beautiful fractals
 - http://sdz.tdct.org/sdz/dessiner-la-fractale-de-mandelbrot.html?fbclid=IwAR0abKda4KXEbe7Cle1rxME04v48rH4WvZR10jhebNGEQd2yZVU0bfX2mN0
 - https://qst0.github.io/ft_libgfx/man_mlx_new_window.html (man)
 - https://stackoverflow.com/questions/41796832/smooth-zoom-with-mouse-in-mandelbrot-set-c (zoom)
+- https://stackoverflow.com/questions/3220277/what-do-the-makefile-symbols-and-mean (MAKEEFILE stackoverflow)
 - https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_makefiles.html#using (makefile)
 - https://www.tenouk.com/ModuleW.html
 - https://www.geeksforgeeks.org/cc-preprocessors/
