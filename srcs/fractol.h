@@ -6,8 +6,8 @@
  # include <fcntl.h>
  # include <math.h>
  # include <stdlib.h>
- # define WIDTH 700
- # define HEIGHT 700
+ # define WIDTH 1700
+ # define HEIGHT 1700
 
 
 
@@ -54,6 +54,11 @@ typedef struct s_frac
 
 
 void	draw_mandelbrot(t_frac *f);
+void	draw_burningship(t_frac *f);
+void	check_av(char *str, int *type);
+void	ft_draw(t_frac *f);
+
+
 #endif
 
 

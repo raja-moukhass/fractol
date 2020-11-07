@@ -39,8 +39,9 @@ int	ft_key_perssed(int keycode, t_frac *f)
 
 	if (keycode == 53)
 		ft_close();
-	draw_mandelbrot(f);
+		ft_draw(f);
 	mlx_put_image_to_window(f->mlx.mlx_ptr, f->mlx.mlx_win, f->mlx.img_ptr, 0, 0);
+
 	return(1);
 }
 
@@ -77,14 +78,13 @@ void	draw_mandelbrot(t_frac *f)
 			int iteration = 0;
 			while (x*x+y*y <= 4 && iteration < draw.max) {
 				 draw.x_new = x*x - y*y + draw.c_re;
-				y = 2*x*y + draw.c_im;
+				y =  2*x*y + draw.c_im;
 				x  = draw.x_new;
 				iteration++;
 			}
-
-
 			if (iteration < draw.max)
-				f->mlx.data[row * WIDTH + col] = 15213899 * iteration ;
+			f->mlx.data[row * WIDTH + col] = 10 * iteration ;
+			//152155899 *
 			else f->mlx.data[row * WIDTH + col] =0;
 		}
 	}
@@ -94,26 +94,35 @@ void	draw_burningship(t_frac *f)
 {
 	t_draw draw;
 	draw.max = 50;
+	int row;
+	row = -1;
+	int col = 0;
+	//col = -1;
 
-	for (int row = 0; row < HEIGHT; row++)
+	while( ++row < HEIGHT)
 	{
-		for (int col = 0; col < WIDTH; col++)
+		col = -1;
+		while (++col < WIDTH)
 		{
-			double c_re = (col - WIDTH/2.0)*4.0/WIDTH;
-			double c_im = (row - HEIGHT/2.0)*4.0/WIDTH;
+			 draw.c_re  = (col - WIDTH/2.0)*4.0/WIDTH + f->key;
+			 draw.c_im = (row - HEIGHT/2.0)*4.0/WIDTH + f->key2;
+			double x = 0, y = 0;
 			int iteration = 0;
-			while (draw.x*draw.x+draw.y*draw.y <= 4 && iteration < draw.max) {
-				double x_new = draw.x*draw.x - draw.y*draw.y + c_re ;
-				draw.y = 2*draw.x*draw.y + c_im;
-				draw.x = x_new;
+			while (x*x+y*y < 4 && iteration < draw.max) {
+				 draw.x_new = x*x - y*y + draw.c_re;
+				y = -2*x*y + draw.c_im;
+				x  = draw.x_new;
 				iteration++;
 			}
 			if (iteration < draw.max)
-				f->mlx.data[row * WIDTH + col] = 515112 * iteration;
-			else f->mlx.data[row * WIDTH + col] = 0;
+				f->mlx.data[row * WIDTH + col] =   10 *iteration;
+			else f->mlx.data[row * WIDTH + col] =0;
+
 		}
 	}
 }
+
+
 
 void	ft_draw(t_frac *f)
 {
@@ -124,7 +133,6 @@ void	ft_draw(t_frac *f)
 	if (f->type == 3)
 		draw_burningship(f);
 }
-
 
 int		main(int ac, char **av)
 
