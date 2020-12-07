@@ -20,6 +20,7 @@ This project is meant to create graphically beautiful fractals
 - https://www.geeksforgeeks.org/cc-preprocessors/
 - https://www.tenouk.com/ModuleZ.html
 - https://www.tenouk.com/Sitemap.html
+- file:///Users/ramoukha/Downloads/FdF%20Cookbook%20(1).webarchive
 ### videos sources
 - https://youtu.be/Y4ICbYtBGzA (FR)
 - https://youtu.be/iFA3g_4myFw (FR)
