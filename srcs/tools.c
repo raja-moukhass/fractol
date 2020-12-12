@@ -18,14 +18,3 @@ void	put_pxl_to_img(t_fractol *data, int x, int y, int color)
 	}
 }
 
-void	put_text(t_fractol *data)
-{
-	char	*text;
-	char	*nb;
-
-	nb = ft_itoa(data->it_max);
-	text = ft_strjoin("iterations : ", nb);
-	mlx_string_put(data->mlx, data->win, 10, 10, 0xFFFFFF, text);
-	ft_strdel(&text);
-	ft_strdel(&nb);
-}
