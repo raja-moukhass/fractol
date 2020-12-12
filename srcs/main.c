@@ -1,16 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ramoukha <ramoukha@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/07 14:35:15 by ramoukha          #+#    #+#             */
-/*   Updated: 2020/03/11 18:07:00 by ramoukha         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
-#include "../srcs/fractol.h"
+#include "../Includes/fractol.h"
 
 void		show_usage(void)
 {
@@ -18,140 +7,66 @@ void		show_usage(void)
 	ft_putendl("option : \n1/ mandelbrot\n2/ julia\n3/ burningship");
 	exit(0);
 }
-int		ft_close(void)
+void	fract_calc(t_fractol *data)
 {
-	
-	exit(EXIT_SUCCESS);
-	return (1);
+	if (data->it_max < 0)
+		data->it_max = 0;
+	if (data->fract == 0)
+		mandelbrot_pthread(data);
+	else if (data->fract == 1)
+		julia_pthread(data);
+	else if (data->fract == 2)
+		burningship_pthread(data);
 }
 
-int	ft_key_perssed(int keycode, t_frac *f)
+void	fract_init(t_fractol *data)
 {
-
-	if ( keycode == 123)
-	f->key += 1;
-	if ( keycode == 124)
-	f->key -= 1;
-	if (keycode == 126)
-	f->key2 +=1;
-	if (keycode == 125)
-	f->key2 -=1;
-
-	if (keycode == 53)
-		ft_close();
-		ft_draw(f);
-	mlx_put_image_to_window(f->mlx.mlx_ptr, f->mlx.mlx_win, f->mlx.img_ptr, 0, 0);
-
-	return(1);
+	if (data->fract == 0)
+		mandelbrot_init(data);
+	else if (data->fract == 1)
+		julia_init(data);
+	else if (data->fract == 2)
+		burningship_init(data);
+	fract_calc(data);
 }
 
-void	check_av(char *str, int *type)
+void	mlx_win_init(t_fractol *data)
 {
-	if (ft_strcmp(str, "mandelbrot") == 0)
-		*type = 1;
-	else if ( ft_strcmp( str, "julia") == 0)
-		*type = 2;
-	else if (ft_strcmp(str, "burningship") == 0)
-		*type = 3;
-	else
-		show_usage();
+	data->mlx = mlx_init();
+	data->win = mlx_new_window(data->mlx, WIDTH, WIDTH, "Fractol");
+	data->img = mlx_new_image(data->mlx, WIDTH, WIDTH);
+	data->img_ptr = mlx_get_data_addr(data->img,
+			&data->bpp, &data->sl, &data->endian);
 }
 
-
-void	draw_mandelbrot(t_frac *f) 
+void		fract_comp(char **av, t_fractol *data)
 {
-	t_draw draw;
-	draw.max = 50;
-	int row;
-	row = -1;
-	int col = 0;
-	//col = -1;
-
-	while( ++row < HEIGHT)
-	{
-		col = -1;
-		while (++col < WIDTH)
-		{
-			 draw.c_re  = (col - WIDTH/2.0)*4.0/WIDTH + f->key;
-			 draw.c_im = (row - HEIGHT/2.0)*4.0/WIDTH + f->key2;
-			double x = 0, y = 0;
-			int iteration = 0;
-			while (x*x+y*y <= 4 && iteration < draw.max) {
-				 draw.x_new = x*x - y*y + draw.c_re;
-				y =  2*x*y + draw.c_im;
-				x  = draw.x_new;
-				iteration++;
-			}
-			if (iteration < draw.max)
-			f->mlx.data[row * WIDTH + col] = 10 * iteration ;
-			//152155899 *
-			else f->mlx.data[row * WIDTH + col] =0;
-		}
-	}
-}
-
-void	draw_burningship(t_frac *f)
-{
-	t_draw draw;
-	draw.max = 50;
-	int row;
-	row = -1;
-	int col = 0;
-	//col = -1;
-
-	while( ++row < HEIGHT)
-	{
-		col = -1;
-		while (++col < WIDTH)
-		{
-			 draw.c_re  = (col - WIDTH/2.0)*4.0/WIDTH + f->key;
-			 draw.c_im = (row - HEIGHT/2.0)*4.0/WIDTH + f->key2;
-			double x = 0, y = 0;
-			int iteration = 0;
-			while (x*x+y*y < 4 && iteration < draw.max) {
-				 draw.x_new = x*x - y*y + draw.c_re;
-				y = -2*x*y + draw.c_im;
-				x  = draw.x_new;
-				iteration++;
-			}
-			if (iteration < draw.max)
-				f->mlx.data[row * WIDTH + col] =   10 *iteration;
-			else f->mlx.data[row * WIDTH + col] =0;
-
-		}
-	}
-}
-
-
-
-void	ft_draw(t_frac *f)
-{
-	if (f->type == 1)
-		draw_mandelbrot(f);
-	// if (f->type == 2)
-	// 	draw_julia(f);
-	if (f->type == 3)
-		draw_burningship(f);
+	if (ft_strcmp(av[1], "mandelbrot") == 0)
+		data->fract = 0;
+	else if (ft_strcmp(av[1], "julia") == 0)
+		data->fract = 1;
+	else if (ft_strcmp(av[1], "burningship") == 0)
+		data->fract = 2;
 }
 
 int		main(int ac, char **av)
-
 {
-	t_frac	f;
-	//\t_draw draw;
-	f.key = 0;
-	f.key2 = 0;
+	t_fractol	*data;
+
+	if (!(data = (t_fractol *)malloc(sizeof(t_fractol))))
+		return (-1);
 	if (ac == 2)
-		check_av(av[1], &(f.type));
+	{
+		mlx_win_init(data);
+		fract_comp(av, data);
+		fract_init(data);
+		mlx_hook(data->win, 6, 1L < 6, mouse_julia, data);
+		mlx_hook(data->win, 17, 0L, ft_close, data);
+		mlx_key_hook(data->win, key_hook, data);
+		mlx_mouse_hook(data->win, mouse_hook, data);
+		mlx_loop(data->mlx);
+	}
 	else
 		show_usage();
-	f.mlx.mlx_ptr = mlx_init();
-	f.mlx.mlx_win = mlx_new_window(f.mlx.mlx_ptr, WIDTH, HEIGHT, av[1]);
-	f.mlx.img_ptr = mlx_new_image(f.mlx.mlx_ptr,WIDTH, HEIGHT);
-	f.mlx.data = (int*)mlx_get_data_addr( f.mlx.img_ptr,&f.mlx.bpp, &f.mlx.size_l, &f.mlx.endian);
-	ft_draw(&f);
-	mlx_put_image_to_window(f.mlx.mlx_ptr, f.mlx.mlx_win, f.mlx.img_ptr, 0, 0);
-	mlx_hook(f.mlx.mlx_win, 17, 0 ,ft_close, &f);
-	mlx_hook( f.mlx.mlx_win, 2, 0,ft_key_perssed,&f);
-	mlx_loop(f.mlx.mlx_ptr);
+	return (0);
 }
