@@ -52,7 +52,6 @@ void		fract_comp(char **av, t_fractol *data)
 	}
 					
 }
-
 int		main(int ac, char **av)
 {
 	t_fractol	*data;
