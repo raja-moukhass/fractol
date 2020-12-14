@@ -9,8 +9,6 @@ void		show_usage(void)
 }
 void	fract_calc(t_fractol *data)
 {
-	if (data->it_max < 0)
-		data->it_max = 0;
 	if (data->fract == 0)
 		mandelbrot_pthread(data);
 	else if (data->fract == 1)
@@ -47,6 +45,12 @@ void		fract_comp(char **av, t_fractol *data)
 		data->fract = 1;
 	else if (ft_strcmp(av[1], "burningship") == 0)
 		data->fract = 2;
+	else if ((ft_strcmp(av[1], "burningship") != 0 )|| (ft_strcmp(av[1], "julia") != 0) || (ft_strcmp(av[1], "mandelbrot") != 0 ))
+	{
+		ft_putendl("⛔️name incorrect⛔️");
+		exit(0);
+	}
+					
 }
 
 int		main(int ac, char **av)
@@ -57,8 +61,9 @@ int		main(int ac, char **av)
 		return (-1);
 	if (ac == 2)
 	{
-		mlx_win_init(data);
 		fract_comp(av, data);
+		mlx_win_init(data);
+
 		fract_init(data);
 		mlx_hook(data->win, 6, 1L < 6, mouse_julia, data);
 		mlx_hook(data->win, 17, 0L, ft_close, data);

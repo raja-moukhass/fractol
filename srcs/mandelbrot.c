@@ -2,6 +2,7 @@
 
 #include "../Includes/fractol.h"
 
+
 void	mandelbrot_init(t_fractol *data)
 {
 	data->it_max = 50;
@@ -71,6 +72,7 @@ void	*mandelbrot(void *tab)
 	}
 	return (tab);
 }
+
 
 void	mandelbrot_pthread(t_fractol *data)
 {
