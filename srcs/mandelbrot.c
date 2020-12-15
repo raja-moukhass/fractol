@@ -1,8 +1,16 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   mandelbrot.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ramoukha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/15 13:02:10 by ramoukha          #+#    #+#             */
+/*   Updated: 2020/12/15 13:02:12 by ramoukha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../Includes/fractol.h"
-
-
 
 void	mandelbrot_calc(t_fractol *data)
 {
@@ -29,7 +37,7 @@ void	mandelbrot_calc(t_fractol *data)
 void	*mandelbrot(void *tab)
 {
 	t_fractol	*data;
-	int		tmp;
+	int			tmp;
 
 	data = (t_fractol *)tab;
 	data->x = 0;
@@ -39,32 +47,13 @@ void	*mandelbrot(void *tab)
 		data->y = tmp;
 		while (data->y < data->y_max)
 		{
-			
-	data->c_r = data->x / data->zoom + data->x1;
-	data->c_i = data->y / data->zoom + data->y1;
-	data->z_r = 0;
-	data->z_i = 0;
-	data->it = 0;
-	while (data->z_r * data->z_r + data->z_i *
-			data->z_i < 4 && data->it < data->it_max)
-	{
-		data->tmp = data->z_r;
-		data->z_r = data->z_r * data->z_r -
-			data->z_i * data->z_i + data->c_r;
-		data->z_i = 2 * data->z_i * data->tmp + data->c_i;
-		data->it++;
-	}
-	if (data->it == data->it_max)
-		put_pxl_to_img(data, data->x, data->y, 0x000000);
-	else
-		put_pxl_to_img(data, data->x, data->y, (data->color * data->it));
+			mandelbrot_calc(data);
 			data->y++;
 		}
 		data->x++;
 	}
 	return (tab);
 }
-
 
 void	mandelbrot_pthread(t_fractol *data)
 {

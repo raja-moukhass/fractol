@@ -1,8 +1,16 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   burningship.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ramoukha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/15 13:03:20 by ramoukha          #+#    #+#             */
+/*   Updated: 2020/12/15 13:03:22 by ramoukha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../Includes/fractol.h"
-
-
 
 void	burningship_calc(t_fractol *data)
 {
@@ -14,7 +22,7 @@ void	burningship_calc(t_fractol *data)
 	while (data->z_r * data->z_r + data->z_i * data->z_i < 4
 			&& data->it < data->it_max)
 	{
-		data->tmp = pow(data->z_r ,2)- pow(data->z_i,2) + data->c_r;
+		data->tmp = pow(data->z_r, 2) - pow(data->z_i, 2) + data->c_r;
 		data->z_i = fabs(2 * data->z_r * data->z_i) + data->c_i;
 		data->z_r = data->tmp;
 		data->it++;
@@ -27,7 +35,7 @@ void	burningship_calc(t_fractol *data)
 
 void	*burningship(void *tab)
 {
-	int		tmp;
+	int			tmp;
 	t_fractol	*data;
 
 	data = (t_fractol *)tab;

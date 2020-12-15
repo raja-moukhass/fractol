@@ -1,13 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ramoukha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/15 12:54:06 by ramoukha          #+#    #+#             */
+/*   Updated: 2020/12/15 12:54:20 by ramoukha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../Includes/fractol.h"
-
-void		show_usage(void)
-{
-	ft_putendl("⛔️ Usage: ./fractol [set name]⛔️");
-	ft_putendl("option : \n1/ mandelbrot\n2/ julia\n3/ burningship");
-	exit(0);
-}
-void	fract_calc(t_fractol *data)
+#include <stdio.h>
+void		fract_calc(t_fractol *data)
 {
 	if (data->fract == 0)
 		mandelbrot_pthread(data);
@@ -17,7 +22,7 @@ void	fract_calc(t_fractol *data)
 		burningship_pthread(data);
 }
 
-void	fract_init(t_fractol *data)
+void		fract_init(t_fractol *data)
 {
 	if (data->fract == 0)
 		all_init(data);
@@ -28,13 +33,14 @@ void	fract_init(t_fractol *data)
 	fract_calc(data);
 }
 
-void	mlx_win_init(t_fractol *data)
+void		mlx_win_init(t_fractol *data)
 {
 	data->mlx = mlx_init();
-	data->win = mlx_new_window(data->mlx, WIDTH, WIDTH,"Fractol");
+	data->win = mlx_new_window(data->mlx, WIDTH, WIDTH, "Fractol");
 	data->img = mlx_new_image(data->mlx, WIDTH, WIDTH);
 	data->img_ptr = mlx_get_data_addr(data->img,
 			&data->bpp, &data->sl, &data->endian);
+	
 }
 
 void		fract_comp(char **av, t_fractol *data)
@@ -45,14 +51,15 @@ void		fract_comp(char **av, t_fractol *data)
 		data->fract = 1;
 	else if (ft_strcmp(av[1], "burningship") == 0)
 		data->fract = 2;
-	else if ((ft_strcmp(av[1], "burningship") != 0 )|| (ft_strcmp(av[1], "julia") != 0) || (ft_strcmp(av[1], "mandelbrot") != 0 ))
+	else if ((ft_strcmp(av[1], "burningship") != 0) ||
+	(ft_strcmp(av[1], "julia") != 0) || (ft_strcmp(av[1], "mandelbrot") != 0))
 	{
 		ft_putendl("⛔️name incorrect⛔️");
 		exit(0);
 	}
-					
 }
-int		main(int ac, char **av)
+
+int			main(int ac, char **av)
 {
 	t_fractol	*data;
 
@@ -62,7 +69,6 @@ int		main(int ac, char **av)
 	{
 		fract_comp(av, data);
 		mlx_win_init(data);
-
 		fract_init(data);
 		mlx_hook(data->win, 6, 1L < 6, mouse_julia, data);
 		mlx_hook(data->win, 17, 0L, ft_close, data);

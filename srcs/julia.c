@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   julia.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ramoukha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/15 12:57:59 by ramoukha          #+#    #+#             */
+/*   Updated: 2020/12/15 12:58:01 by ramoukha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../Includes/fractol.h"
 
@@ -13,41 +23,8 @@ int		mouse_julia(int x, int y, t_fractol *data)
 	return (0);
 }
 
-
-// void	julia_calc(t_fractol *data)
-// {
-// 	data->z_r = data->x / data->zoom + data->x1;
-// 	data->z_i = data->y / data->zoom + data->y1;
-// 	data->it = 0;
-// 	while (data->z_r * data->z_r + data->z_i
-// 			* data->z_i < 4 && data->it < data->it_max)
-// 	{
-// 		data->tmp = data->z_r;
-// 		data->z_r = data->z_r * data->z_r -
-// 			data->z_i * data->z_i - 0.8 + (data->c_r / WIDTH);
-// 		data->z_i = 2 * data->z_i * data->tmp + data->c_i / WIDTH;
-// 		data->it++;
-// 	}
-// 	if (data->it == data->it_max)
-// 		put_pxl_to_img(data, data->x, data->y, 0x000000);
-// 	else
-// 		put_pxl_to_img(data, data->x, data->y, (data->color * data->it));
-// }
-
-void	*julia(void *tab)
+void	julia_calc(t_fractol *data)
 {
-	int		tmp;
-	t_fractol	*data;
-
-	data = (t_fractol *)tab;
-	data->x = 0;
-	tmp = data->y;
-	while (data->x < WIDTH)
-	{
-		data->y = tmp;
-		while (data->y < data->y_max)
-		{
-			
 	data->z_r = data->x / data->zoom + data->x1;
 	data->z_i = data->y / data->zoom + data->y1;
 	data->it = 0;
@@ -64,6 +41,22 @@ void	*julia(void *tab)
 		put_pxl_to_img(data, data->x, data->y, 0x000000);
 	else
 		put_pxl_to_img(data, data->x, data->y, (data->color * data->it));
+}
+
+void	*julia(void *tab)
+{
+	int			tmp;
+	t_fractol	*data;
+
+	data = (t_fractol *)tab;
+	data->x = 0;
+	tmp = data->y;
+	while (data->x < WIDTH)
+	{
+		data->y = tmp;
+		while (data->y < data->y_max)
+		{
+			julia_calc(data);
 			data->y++;
 		}
 		data->x++;
@@ -87,6 +80,6 @@ void	julia_pthread(t_fractol *data)
 		i++;
 	}
 	while (i--)
-	pthread_join(t[i], NULL);
+		pthread_join(t[i], NULL);
 	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
 }

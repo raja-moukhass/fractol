@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fractol.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ramoukha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/15 13:06:46 by ramoukha          #+#    #+#             */
+/*   Updated: 2020/12/15 13:06:48 by ramoukha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FRACTOL_H
 # define FRACTOL_H
-#include <stdio.h>
+# include <stdio.h>
 # include <stdlib.h>
 # include "../libft/libft.h"
 # include "mlx.h"
@@ -47,18 +59,15 @@ void			ft_zoom(int x, int y, t_fractol *data);
 void			ft_dezoom(int x, int y, t_fractol *data);
 int				mouse_hook(int mousecode, int x, int y, t_fractol *data);
 
-//void			mandelbrot_init(t_fractol *data);
 void			mandelbrot_calc(t_fractol *data);
 void			*mandelbrot(void *tab);
 void			mandelbrot_pthread(t_fractol *data);
 
 int				mouse_julia(int x, int y, t_fractol *data);
-//void			julia_init(t_fractol *data);
 void			julia_calc(t_fractol *data);
 void			*julia(void *tab);
 void			julia_pthread(t_fractol *data);
 
-//void			burningship_init(t_fractol *data);
 void			burningship_calc(t_fractol *data);
 void			*burningship(void *tab);
 void			burningship_pthread(t_fractol *data);
@@ -66,7 +75,6 @@ void			burningship_pthread(t_fractol *data);
 int				ft_close(void);
 void			put_pxl_to_img(t_fractol *data, int x, int y, int color);
 void			put_text(t_fractol *data);
-//void			fract_comp(char **av);
 
 void			fract_calc(t_fractol *data);
 void			fract_init(t_fractol *data);

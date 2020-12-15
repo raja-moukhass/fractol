@@ -1,7 +1,18 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   tools.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ramoukha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/15 13:00:01 by ramoukha          #+#    #+#             */
+/*   Updated: 2020/12/15 13:00:04 by ramoukha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../Includes/fractol.h"
-void	all_init(t_fractol *data)
+
+void		all_init(t_fractol *data)
 {
 	data->it_max = 50;
 	data->zoom = 200;
@@ -12,13 +23,14 @@ void	all_init(t_fractol *data)
 	data->c_i = 0.01;
 	data->julia_mouse = 1;
 }
-int		ft_close(void)
+
+int			ft_close(void)
 {
 	exit(1);
 	return (0);
 }
 
-void	put_pxl_to_img(t_fractol *data, int x, int y, int color)
+void		put_pxl_to_img(t_fractol *data, int x, int y, int color)
 {
 	if (data->x < WIDTH && data->y < WIDTH)
 	{
@@ -28,3 +40,9 @@ void	put_pxl_to_img(t_fractol *data, int x, int y, int color)
 	}
 }
 
+void		show_usage(void)
+{
+	ft_putendl("⛔️ Usage: ./fractol [set name]⛔️");
+	ft_putendl("option : \n1/ mandelbrot\n2/ julia\n3/ burningship");
+	exit(0);
+}
