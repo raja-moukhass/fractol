@@ -13,17 +13,6 @@ int		mouse_julia(int x, int y, t_fractol *data)
 	return (0);
 }
 
-void	julia_init(t_fractol *data)
-{
-	data->it_max = 50;
-	data->zoom = 200;
-	data->x1 = -2.0;
-	data->y1 = -1.9;
-	data->color = 265;
-	data->c_r = 0.285;
-	data->c_i = 0.01;
-	data->julia_mouse = 1;
-}
 
 // void	julia_calc(t_fractol *data)
 // {

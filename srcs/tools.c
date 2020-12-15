@@ -1,7 +1,17 @@
 
 
 #include "../Includes/fractol.h"
-
+void	all_init(t_fractol *data)
+{
+	data->it_max = 50;
+	data->zoom = 200;
+	data->x1 = -2.0;
+	data->y1 = -1.9;
+	data->color = 265;
+	data->c_r = 0.285;
+	data->c_i = 0.01;
+	data->julia_mouse = 1;
+}
 int		ft_close(void)
 {
 	exit(1);

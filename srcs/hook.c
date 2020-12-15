@@ -24,13 +24,13 @@ int		key_hook(int keycode, t_fractol *data)
 	else if (keycode == 78)
 		data->it_max -= 50;
 	else if (keycode == 123)
-		data->x1 -= 30 / data->zoom;
-	else if (keycode == 124)
 		data->x1 += 30 / data->zoom;
+	else if (keycode == 124)
+		data->x1 -= 30 / data->zoom;
 	else if (keycode == 125)
-		data->y1 += 30 / data->zoom;
-	else if (keycode == 126)
 		data->y1 -= 30 / data->zoom;
+	else if (keycode == 126)
+		data->y1 += 30 / data->zoom;
 	else if (keycode == 49)
 		fract_init(data);
 	else if (keycode == 18)

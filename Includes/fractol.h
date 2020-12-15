@@ -1,5 +1,3 @@
-
-
 #ifndef FRACTOL_H
 # define FRACTOL_H
 #include <stdio.h>
@@ -9,6 +7,7 @@
 # include "math.h"
 # include "pthread.h"
 # define WIDTH 600
+# define HEIGHT 600
 # define THREAD_WIDTH 5
 # define THREAD_NUMBER 120
 
@@ -39,25 +38,27 @@ typedef struct	s_fractol
 	double		z_i;
 	double		tmp;
 }				t_fractol;
-void		show_usage(void);
+void			show_usage(void);
 int				key_hook(int keycode, t_fractol *data);
+void			all_init(t_fractol *data);
+
 int				key_hook2(int keycode, t_fractol *data);
 void			ft_zoom(int x, int y, t_fractol *data);
 void			ft_dezoom(int x, int y, t_fractol *data);
 int				mouse_hook(int mousecode, int x, int y, t_fractol *data);
 
-void			mandelbrot_init(t_fractol *data);
+//void			mandelbrot_init(t_fractol *data);
 void			mandelbrot_calc(t_fractol *data);
 void			*mandelbrot(void *tab);
 void			mandelbrot_pthread(t_fractol *data);
 
 int				mouse_julia(int x, int y, t_fractol *data);
-void			julia_init(t_fractol *data);
+//void			julia_init(t_fractol *data);
 void			julia_calc(t_fractol *data);
 void			*julia(void *tab);
 void			julia_pthread(t_fractol *data);
 
-void			burningship_init(t_fractol *data);
+//void			burningship_init(t_fractol *data);
 void			burningship_calc(t_fractol *data);
 void			*burningship(void *tab);
 void			burningship_pthread(t_fractol *data);
@@ -65,6 +66,7 @@ void			burningship_pthread(t_fractol *data);
 int				ft_close(void);
 void			put_pxl_to_img(t_fractol *data, int x, int y, int color);
 void			put_text(t_fractol *data);
+//void			fract_comp(char **av);
 
 void			fract_calc(t_fractol *data);
 void			fract_init(t_fractol *data);

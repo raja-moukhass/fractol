@@ -20,18 +20,18 @@ void	fract_calc(t_fractol *data)
 void	fract_init(t_fractol *data)
 {
 	if (data->fract == 0)
-		mandelbrot_init(data);
+		all_init(data);
 	else if (data->fract == 1)
-		julia_init(data);
+		all_init(data);
 	else if (data->fract == 2)
-		burningship_init(data);
+		all_init(data);
 	fract_calc(data);
 }
 
 void	mlx_win_init(t_fractol *data)
 {
 	data->mlx = mlx_init();
-	data->win = mlx_new_window(data->mlx, WIDTH, WIDTH, "Fractol");
+	data->win = mlx_new_window(data->mlx, WIDTH, WIDTH,"Fractol");
 	data->img = mlx_new_image(data->mlx, WIDTH, WIDTH);
 	data->img_ptr = mlx_get_data_addr(data->img,
 			&data->bpp, &data->sl, &data->endian);

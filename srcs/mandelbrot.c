@@ -3,14 +3,6 @@
 #include "../Includes/fractol.h"
 
 
-void	mandelbrot_init(t_fractol *data)
-{
-	data->it_max = 50;
-	data->zoom = 300;
-	data->x1 = -2.05;
-	data->y1 = -1.3;
-	data->color = 265;
-}
 
 void	mandelbrot_calc(t_fractol *data)
 {

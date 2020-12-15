@@ -2,14 +2,7 @@
 
 #include "../Includes/fractol.h"
 
-void	burningship_init(t_fractol *data)
-{
-	data->it_max = 50;
-	data->zoom = 220;
-	data->x1 = -2.2;
-	data->y1 = -2.5;
-	data->color = 265;
-}
+
 
 void	burningship_calc(t_fractol *data)
 {
@@ -21,7 +14,7 @@ void	burningship_calc(t_fractol *data)
 	while (data->z_r * data->z_r + data->z_i * data->z_i < 4
 			&& data->it < data->it_max)
 	{
-		data->tmp = data->z_r * data->z_r - data->z_i * data->z_i + data->c_r;
+		data->tmp = pow(data->z_r ,2)- pow(data->z_i,2) + data->c_r;
 		data->z_i = fabs(2 * data->z_r * data->z_i) + data->c_i;
 		data->z_r = data->tmp;
 		data->it++;
