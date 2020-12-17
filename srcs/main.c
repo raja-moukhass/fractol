@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramoukha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ramoukha <ramoukha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 12:54:06 by ramoukha          #+#    #+#             */
-/*   Updated: 2020/12/15 12:54:20 by ramoukha         ###   ########.fr       */
+/*   Updated: 2020/12/17 18:34:51 by ramoukha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/fractol.h"
-#include <stdio.h>
+
 void		fract_calc(t_mlx *data)
 {
 	if (data->fract == 0)
@@ -33,14 +33,14 @@ void		fract_init(t_mlx *data)
 	fract_calc(data);
 }
 
-void		mlx_win_init(t_mlx *data)
+void		mlx_win_init(t_mlx *data, char *title)
 {
+	data->julia_mouse = ACTIVED_MOUSE;
 	data->mlx = mlx_init();
-	data->win = mlx_new_window(data->mlx, WIDTH, WIDTH, "Fractol");
-	data->img = mlx_new_image(data->mlx, WIDTH, WIDTH);
+	data->win = mlx_new_window(data->mlx, WIDTH, HEIGHT, title);
+	data->img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
 	data->img_ptr = mlx_get_data_addr(data->img,
 			&data->bpp, &data->sl, &data->endian);
-	
 }
 
 void		fract_comp(char **av, t_mlx *data)
@@ -51,10 +51,10 @@ void		fract_comp(char **av, t_mlx *data)
 		data->fract = 1;
 	else if (ft_strcmp(av[1], "burningship") == 0)
 		data->fract = 2;
-	else if ((ft_strcmp(av[1], "burningship") != 0) ||
-	(ft_strcmp(av[1], "julia") != 0) || (ft_strcmp(av[1], "mandelbrot") != 0))
+	else
 	{
 		ft_putendl("🐷name incorrect 🐷");
+		ft_memdel((void **)&data);
 		exit(0);
 	}
 }
@@ -68,7 +68,7 @@ int			main(int ac, char **av)
 	if (ac == 2)
 	{
 		fract_comp(av, data);
-		mlx_win_init(data);
+		mlx_win_init(data, av[1]);
 		fract_init(data);
 		mlx_hook(data->win, 6, 1L < 6, mouse_julia, data);
 		mlx_hook(data->win, 17, 0L, ft_close, data);
