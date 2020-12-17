@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   julia.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramoukha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ramoukha <ramoukha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 12:57:59 by ramoukha          #+#    #+#             */
-/*   Updated: 2020/12/15 12:58:01 by ramoukha         ###   ########.fr       */
+/*   Updated: 2020/12/17 19:04:50 by ramoukha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		mouse_julia(int x, int y, t_mlx *data)
 
 void	*julia(void *tab)
 {
-	int			tmp;
+	int		tmp;
 	t_mlx	*data;
 
 	data = (t_mlx *)tab;
@@ -46,9 +46,9 @@ void	*julia(void *tab)
 
 void	julia_pthread(t_mlx *data)
 {
-	t_mlx	tab[THREAD_NUMBER];
-	pthread_t	t[THREAD_NUMBER];
 	int			i;
+	t_mlx		tab[THREAD_NUMBER];
+	pthread_t	t[THREAD_NUMBER];
 
 	i = 0;
 	while (i < THREAD_NUMBER)
