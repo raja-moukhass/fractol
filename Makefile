@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 COMP = gcc -Werror -Wextra -Wall
-SRC = srcs/main.c srcs/hook.c srcs/mandelbrot.c srcs/julia.c srcs/tools.c srcs/burningship.c
+SRC = srcs/main.c srcs/hook.c srcs/mandelbrot.c srcs/julia.c srcs/tools.c srcs/burningship.c srcs/math.c
 OB =  main.o 
 INC = includes/fractol.h
 OB = $(SRC:.c=.o)
@@ -21,7 +21,7 @@ all : $(NAME)
 
 $(NAME): $(OB)
 	make -C libft/
-	$(COMP) -c $(SRC)
+	# $(COMP) -c $(SRC)
 	$(COMP) -g -o $(NAME) $(OB) $(LIBFLAGS)
 
 

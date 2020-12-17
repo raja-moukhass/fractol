@@ -12,33 +12,12 @@
 
 #include "../Includes/fractol.h"
 
-void	burningship_calc(t_fractol *data)
-{
-	data->c_r = data->x / data->zoom + data->x1;
-	data->c_i = data->y / data->zoom + data->y1;
-	data->z_r = 0;
-	data->z_i = 0;
-	data->it = 0;
-	while (data->z_r * data->z_r + data->z_i * data->z_i < 4
-			&& data->it < data->it_max)
-	{
-		data->tmp = pow(data->z_r, 2) - pow(data->z_i, 2) + data->c_r;
-		data->z_i = fabs(2 * data->z_r * data->z_i) + data->c_i;
-		data->z_r = data->tmp;
-		data->it++;
-	}
-	if (data->it == data->it_max)
-		put_pxl_to_img(data, data->x, data->y, 0x000000);
-	else
-		put_pxl_to_img(data, data->x, data->y, (data->color * data->it));
-}
-
 void	*burningship(void *tab)
 {
-	int			tmp;
-	t_fractol	*data;
+	int		tmp;
+	t_mlx	*data;
 
-	data = (t_fractol *)tab;
+	data = (t_mlx *)tab;
 	data->x = 0;
 	tmp = data->y;
 	while (data->x < WIDTH)
@@ -46,7 +25,7 @@ void	*burningship(void *tab)
 		data->y = tmp;
 		while (data->y < data->y_max)
 		{
-			burningship_calc(data);
+			burningship_math(data);
 			data->y++;
 		}
 		data->x++;
@@ -54,16 +33,17 @@ void	*burningship(void *tab)
 	return (tab);
 }
 
-void	burningship_pthread(t_fractol *data)
+
+void	burningship_pthread(t_mlx *data)
 {
-	t_fractol	tab[THREAD_NUMBER];
+	t_mlx	tab[THREAD_NUMBER];
 	pthread_t	t[THREAD_NUMBER];
 	int			i;
 
 	i = 0;
 	while (i < THREAD_NUMBER)
 	{
-		ft_memcpy((void*)&tab[i], (void*)data, sizeof(t_fractol));
+		ft_memcpy((void*)&tab[i], (void*)data, sizeof(t_mlx));
 		tab[i].y = THREAD_WIDTH * i;
 		tab[i].y_max = THREAD_WIDTH * (i + 1);
 		pthread_create(&t[i], NULL, burningship, &tab[i]);
@@ -71,5 +51,5 @@ void	burningship_pthread(t_fractol *data)
 	}
 	while (i--)
 		pthread_join(t[i], NULL);
-	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
+		mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
 }

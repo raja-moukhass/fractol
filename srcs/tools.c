@@ -12,17 +12,6 @@
 
 #include "../Includes/fractol.h"
 
-void		all_init(t_fractol *data)
-{
-	data->it_max = 50;
-	data->zoom = 200;
-	data->x1 = -2.0;
-	data->y1 = -1.9;
-	data->color = 265;
-	data->c_r = 0.285;
-	data->c_i = 0.01;
-	data->julia_mouse = 1;
-}
 
 int			ft_close(void)
 {
@@ -30,7 +19,7 @@ int			ft_close(void)
 	return (0);
 }
 
-void		put_pxl_to_img(t_fractol *data, int x, int y, int color)
+void		put_pxl_to_img(t_mlx *data, int x, int y, int color)
 {
 	if (data->x < WIDTH && data->y < WIDTH)
 	{
@@ -43,6 +32,6 @@ void		put_pxl_to_img(t_fractol *data, int x, int y, int color)
 void		show_usage(void)
 {
 	ft_putendl("⛔️ Usage: ./fractol [set name]⛔️");
-	ft_putendl("option : \n1/ mandelbrot\n2/ julia\n3/ burningship");
+	ft_putendl("List of available parameters: \n1/ mandelbrot\n2/ julia\n3/ burningship");
 	exit(0);
 }
