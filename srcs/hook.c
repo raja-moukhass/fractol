@@ -3,48 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   hook.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramoukha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ramoukha <ramoukha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 12:56:48 by ramoukha          #+#    #+#             */
-/*   Updated: 2020/12/15 12:56:49 by ramoukha         ###   ########.fr       */
+/*   Updated: 2020/12/17 19:02:33 by ramoukha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/fractol.h"
 
-// int		key_hook2(int keycode, t_mlx *data)
-// {
-// 	if (keycode == 19)
-// 		data->color = 2050;
-// 	else if (keycode == 20)
-// 		data->color = 265;
-	
-// 	return (0);
-// }
-
-int		key_hook(int keycode, t_mlx *data)
+void	free_structure(t_mlx *data)
 {
-	if (keycode == 53)
+	ft_memdel((void **)&(data->mlx));
+	ft_memdel((void **)&(data->win));
+	ft_memdel((void **)&(data->img));
+	ft_memdel((void **)&(data->img_ptr));
+	ft_memdel((void **)&(data));
+}
+
+int		key_hook(int key, t_mlx *data)
+{
+	if (key == EXIT)
+	{
+		free_structure(data);
 		exit(1);
-	else if (keycode == 69) // iteration +
+	}
+	else if (key == ITERATION_PLUS)
 		data->it_max += 50;
-	else if (keycode == 78) // iteration -
+	else if (key == ITERATION_MINUS)
 		data->it_max -= 50;
-	else if (keycode == 123) // mouvement to the left
+	else if (key == LEFT)
 		data->x1 += 30 / data->zoom;
-	else if (keycode == 124) // mouvement to the rt
-		data->x1 -= 30 / data->zoom; 
-	else if (keycode == 125)// bottom mouvement  
+	else if (key == RIGHT)
+		data->x1 -= 30 / data->zoom;
+	else if (key == BOTTOM)
 		data->y1 -= 30 / data->zoom;
-	else if (keycode == 126) // top mouvement 
+	else if (key == TOP)
 		data->y1 += 30 / data->zoom;
-	else if (keycode == 35) 
+	else if (key == SPACE)
 		data->julia_mouse = !data->julia_mouse;
-	else if (keycode == 49)
-		fract_init(data);
-	else if(keycode == 34)// color inside "lettre i"
-		data->color_in +=5;
-	else if (keycode == 8)// lettre c
+	else if (key == C_INSIDE)
+		data->color_in += 5;
+	else if (key == C_OUTSIDE)
 		data->color = 1677;
 	fract_calc(data);
 	return (0);
