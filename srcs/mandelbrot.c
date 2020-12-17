@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   mandelbrot.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramoukha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ramoukha <ramoukha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 13:02:10 by ramoukha          #+#    #+#             */
-/*   Updated: 2020/12/15 13:02:12 by ramoukha         ###   ########.fr       */
+/*   Updated: 2020/12/17 18:57:49 by ramoukha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/fractol.h"
 
-void	*mandelbrot(void *tab)
+void		*mandelbrot(void *tab)
 {
-	t_mlx	*data;
 	int			tmp;
+	t_mlx		*data;
 
 	data = (t_mlx *)tab;
 	data->x = 0;
@@ -33,11 +33,11 @@ void	*mandelbrot(void *tab)
 	return (tab);
 }
 
-void	mandelbrot_pthread(t_mlx *data)
+void		mandelbrot_pthread(t_mlx *data)
 {
-	t_mlx	tab[THREAD_NUMBER];
-	pthread_t	t[THREAD_NUMBER];
 	int			i;
+	t_mlx		tab[THREAD_NUMBER];
+	pthread_t	t[THREAD_NUMBER];
 
 	i = 0;
 	while (i < THREAD_NUMBER)
