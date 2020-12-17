@@ -1,19 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   math.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ramoukha <ramoukha@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/17 18:34:22 by ramoukha          #+#    #+#             */
+/*   Updated: 2020/12/17 18:34:49 by ramoukha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../Includes/fractol.h"
 
-void		all_init(t_mlx *data)
+void	all_init(t_mlx *data)
 {
 	data->it_max = 50;
-    data-> red = (SQR(data->color_in) * 30) % 255;
 	data->zoom = 200;
 	data->x1 = -2.0;
 	data->y1 = -1.9;
 	data->color = 265;
 	data->c_r = 0.285;
 	data->c_i = 0.01;
-    data->color_in = 0;
-	data->julia_mouse = 1;
+	data->color_in = 0;
+	data->julia_mouse = ACTIVED_MOUSE;
 }
+
 void	mandelbrot_math(t_mlx *data)
 {
 	data->c_r = data->x / data->zoom + data->x1;
@@ -30,9 +41,9 @@ void	mandelbrot_math(t_mlx *data)
 		data->z_i = 2 * data->z_i * data->tmp + data->c_i;
 		data->it++;
 	}
-    put_pixel_image(data);
-	
+	put_pixel_image(data);
 }
+
 void	julia_math(t_mlx *data)
 {
 	data->z_r = data->x / data->zoom + data->x1;
@@ -47,11 +58,10 @@ void	julia_math(t_mlx *data)
 		data->z_i = 2 * data->z_i * data->tmp + data->c_i / WIDTH;
 		data->it++;
 	}
-        put_pixel_image(data);
-
-	
+	put_pixel_image(data);
 }
-void			burningship_math(t_mlx *data)
+
+void	burningship_math(t_mlx *data)
 {
 	data->c_r = data->x / data->zoom + data->x1;
 	data->c_i = data->y / data->zoom + data->y1;
@@ -66,12 +76,12 @@ void			burningship_math(t_mlx *data)
 		data->z_r = data->tmp;
 		data->it++;
 	}
-    put_pixel_image(data);
-	
+	put_pixel_image(data);
 }
-void    put_pixel_image(t_mlx *data)
+
+void	put_pixel_image(t_mlx *data)
 {
-    if (data->it == data->it_max)
+	if (data->it == data->it_max)
 		put_pxl_to_img(data, data->x, data->y, data->color_in);
 	else
 		put_pxl_to_img(data, data->x, data->y, (data->color * data->it));
