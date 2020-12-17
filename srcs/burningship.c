@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   burningship.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramoukha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ramoukha <ramoukha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 13:03:20 by ramoukha          #+#    #+#             */
-/*   Updated: 2020/12/15 13:03:22 by ramoukha         ###   ########.fr       */
+/*   Updated: 2020/12/17 19:04:17 by ramoukha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,11 @@ void	*burningship(void *tab)
 	return (tab);
 }
 
-
 void	burningship_pthread(t_mlx *data)
 {
-	t_mlx	tab[THREAD_NUMBER];
-	pthread_t	t[THREAD_NUMBER];
 	int			i;
+	t_mlx		tab[THREAD_NUMBER];
+	pthread_t	t[THREAD_NUMBER];
 
 	i = 0;
 	while (i < THREAD_NUMBER)
@@ -51,5 +50,5 @@ void	burningship_pthread(t_mlx *data)
 	}
 	while (i--)
 		pthread_join(t[i], NULL);
-		mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
+	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
 }
