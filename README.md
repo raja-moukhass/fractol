@@ -25,5 +25,6 @@ This project is meant to create graphically beautiful fractals
 - https://youtu.be/Y4ICbYtBGzA (FR)
 - https://youtu.be/iFA3g_4myFw (FR)
 - https://youtu.be/2JUAojvFpCo (EN)
+- https://www.youtube.com/watch?v=0YaYmyfy9Z4&ab_channel=fenby1976 (this is the Greatest video you can watch)
 
 - https://youtu.be/MwjsO6aniig (EN)
