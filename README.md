@@ -3,7 +3,7 @@ This project is meant to create graphically beautiful fractals
 ### sources
 - https://github.com/keuhdall/images_example
 - https://github.com/qst0/ft_libgfx
-- http://sdz.tdct.org/sdz/dessiner-la-fractale-de-mandelbrot.html?fbclid=IwAR0abKda4KXEbe7Cle1rxME04v48rH4WvZR10jhebNGEQd2yZVU0bfX2mN0
+- http://sdz.tdct.org/sdz/dessiner-la-fractale-de-mandelbrot.html?fbclid=IwAR0abKda4KXEbe7Cle1rxME04v48rH4WvZR10jhebNGEQd2yZVU0bfX2mN0(the most important )
 - http://villemin.gerard.free.fr/Wwwgvmm/Suite/FracComp.htm 
 - https://stackoverflow.com/c/42network/questions/164/166
 - https://www.wikihow.com/Plot-the-Mandelbrot-Set-By-Hand
