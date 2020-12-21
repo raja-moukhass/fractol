@@ -29,3 +29,6 @@ This project is meant to create graphically beautiful fractals
 - https://www.youtube.com/watch?v=0YaYmyfy9Z4&ab_channel=fenby1976 (this is the Greatest video you can watch)
 
 - https://youtu.be/MwjsO6aniig (EN)
+
+
+-https://github.com/abhisheknaiidu/awesome-github-profile-readme#dynamic-realtime- (github )
