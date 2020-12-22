@@ -20,6 +20,8 @@ void		fract_calc(t_mlx *data)
 		julia_pthread(data);
 	else if (data->fract == 2)
 		burningship_pthread(data);
+	else if (data->fract == 3)
+		tricorn_pthread(data);
 }
 
 void		fract_init(t_mlx *data)
@@ -30,12 +32,13 @@ void		fract_init(t_mlx *data)
 		all_init(data);
 	else if (data->fract == 2)
 		all_init(data);
+	else if (data->fract == 3)
+		all_init(data);
 	fract_calc(data);
 }
 
 void		mlx_win_init(t_mlx *data, char *title)
 {
-	data->julia_mouse = ACTIVED_MOUSE;
 	data->mlx = mlx_init();
 	data->win = mlx_new_window(data->mlx, WIDTH, HEIGHT, title);
 	data->img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
@@ -51,6 +54,8 @@ void		fract_comp(char **av, t_mlx *data)
 		data->fract = 1;
 	else if (ft_strcmp(av[1], "burningship") == 0)
 		data->fract = 2;
+	else if (ft_strcmp(av[1], "tricorn") == 0)
+		data->fract = 3;
 	else
 	{
 		ft_putendl("🐷name incorrect 🐷");

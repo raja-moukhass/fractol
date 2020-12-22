@@ -32,6 +32,6 @@ void		show_usage(void)
 {
 	ft_putendl("⛔️Usage: ./fractol [set name]");
 	ft_putendl("List of available parameters:");
-	ft_putendl("1/ mandelbrot\n2/ julia\n3/ burningship");
+	ft_putendl("1/ mandelbrot\n2/ julia\n3/ burningship\n4/ tricorn");
 	exit(0);
 }

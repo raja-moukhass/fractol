@@ -98,4 +98,10 @@ void			fract_calc(t_mlx *data);
 void			fract_init(t_mlx *data);
 void			mlx_win_init(t_mlx *data, char *title);
 void			fract_comp(char **av, t_mlx *data);
+
+void			tricorn_math(t_mlx *data);
+void			*tricorn(void *tab);
+void			tricorn_pthread(t_mlx *data);
+
+
 #endif

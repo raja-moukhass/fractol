@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 COMP = gcc -Werror -Wextra -Wall
-SRC = srcs/main.c srcs/hook.c srcs/mandelbrot.c srcs/julia.c srcs/tools.c srcs/burningship.c srcs/math.c
+SRC = srcs/main.c srcs/hook.c srcs/mandelbrot.c srcs/julia.c srcs/tools.c srcs/burningship.c srcs/math.c srcs/tricorn.c
 OB =  main.o 
 INC = includes/fractol.h
 OB = $(SRC:.c=.o)
