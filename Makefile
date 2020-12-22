@@ -21,10 +21,7 @@ all : $(NAME)
 
 $(NAME): $(OB)
 	make -C libft/
-	# $(COMP) -c $(SRC)
 	$(COMP) -g -o $(NAME) $(OB) $(LIBFLAGS)
-
-
 	@printf "\033[00;32m"
 	@printf "BINARY CREATED\n"
 	@printf "\033[00;0m"
