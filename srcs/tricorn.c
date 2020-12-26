@@ -6,11 +6,11 @@
 /*   By: ramoukha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 11:26:44 by ramoukha          #+#    #+#             */
-/*   Updated: 2020/12/22 11:32:25 by ramoukha         ###   ########.fr       */
+/*   Updated: 2020/12/22 13:27:31 by ramoukha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Includes/fractol.h"
+#include "fractol.h"
 
 void	tricorn_math(t_mlx *data)
 {

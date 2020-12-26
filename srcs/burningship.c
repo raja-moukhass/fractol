@@ -6,11 +6,11 @@
 /*   By: ramoukha <ramoukha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 13:03:20 by ramoukha          #+#    #+#             */
-/*   Updated: 2020/12/17 19:04:17 by ramoukha         ###   ########.fr       */
+/*   Updated: 2020/12/22 13:26:47 by ramoukha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Includes/fractol.h"
+#include "fractol.h"
 
 void	*burningship(void *tab)
 {

@@ -6,11 +6,11 @@
 /*   By: ramoukha <ramoukha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 12:54:06 by ramoukha          #+#    #+#             */
-/*   Updated: 2020/12/17 18:34:51 by ramoukha         ###   ########.fr       */
+/*   Updated: 2020/12/22 13:27:07 by ramoukha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Includes/fractol.h"
+#include "fractol.h"
 
 void		fract_calc(t_mlx *data)
 {

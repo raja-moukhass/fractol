@@ -6,11 +6,11 @@
 /*   By: ramoukha <ramoukha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 13:02:10 by ramoukha          #+#    #+#             */
-/*   Updated: 2020/12/17 18:57:49 by ramoukha         ###   ########.fr       */
+/*   Updated: 2020/12/22 13:27:12 by ramoukha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Includes/fractol.h"
+#include "fractol.h"
 
 void		*mandelbrot(void *tab)
 {

@@ -6,11 +6,11 @@
 /*   By: ramoukha <ramoukha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 12:56:48 by ramoukha          #+#    #+#             */
-/*   Updated: 2020/12/17 19:02:33 by ramoukha         ###   ########.fr       */
+/*   Updated: 2020/12/22 13:26:54 by ramoukha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Includes/fractol.h"
+#include "fractol.h"
 
 void	free_structure(t_mlx *data)
 {

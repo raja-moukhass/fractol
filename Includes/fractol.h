@@ -6,7 +6,7 @@
 /*   By: ramoukha <ramoukha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 13:06:46 by ramoukha          #+#    #+#             */
-/*   Updated: 2020/12/17 18:59:56 by ramoukha         ###   ########.fr       */
+/*   Updated: 2020/12/22 13:01:43 by ramoukha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,5 @@ void			fract_comp(char **av, t_mlx *data);
 void			tricorn_math(t_mlx *data);
 void			*tricorn(void *tab);
 void			tricorn_pthread(t_mlx *data);
-
 
 #endif
