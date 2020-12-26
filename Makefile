@@ -6,17 +6,18 @@
 #    By: ramoukha <ramoukha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/12 12:17:42 by ramoukha          #+#    #+#              #
-#    Updated: 2020/10/23 13:34:40 by ramoukha         ###   ########.fr        #
+#    Updated: 2020/12/22 13:31:29 by ramoukha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 COMP = gcc -Werror -Wextra -Wall
 SRC = srcs/main.c srcs/hook.c srcs/mandelbrot.c srcs/julia.c srcs/tools.c srcs/burningship.c srcs/math.c srcs/tricorn.c
 OB =  main.o 
-INC = includes/fractol.h
+INC_DIR = ./includes/
+INC = ./includes/fractol.h
 OB = $(SRC:.c=.o)
 NAME =  fractol
-LIBFLAGS = -L ./libft -lft -lpthread -L ./miniLibX -lmlx -framework OpenGL -framework AppKit
+LIBFLAGS = -L ./libft -lft -lpthread -lmlx -framework OpenGL -framework AppKit
 all : $(NAME)
 
 $(NAME): $(OB)
@@ -27,7 +28,8 @@ $(NAME): $(OB)
 	@printf "\033[00;0m"
 
 %.o : %.c $(INC)
-	$(COMP) -c -o $@ $< -I includes/fdf.h
+	$(COMP) -c -o $@ $< -I $(INC_DIR)
+
 clean:
 	make -C libft/ clean
 	rm -f $(OB)
