@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   julia.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramoukha <ramoukha@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ramoukha <ramoukha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 12:57:59 by ramoukha          #+#    #+#             */
-/*   Updated: 2020/12/17 19:04:50 by ramoukha         ###   ########.fr       */
+/*   Updated: 2020/12/26 14:10:29 by ramoukha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Includes/fractol.h"
+#include "fractol.h"
 
 int		mouse_julia(int x, int y, t_mlx *data)
 {
