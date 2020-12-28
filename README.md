@@ -2,6 +2,10 @@
 Exploring the wonderful world of fractals with the 42 mlx library.
 
 This program will generate a number of escape time fractals with the ability to zoom, cool color animations, and in some cases, mouse interactivity!
+# Installation
+To generate an executable for this project run make in the root of the project directory after you've downloaded or cloned it.
+
+This project will only work on MacOS El Capitan/Sierra/HighSierra and even then, no promises!
 
 ### sources
 - https://github.com/keuhdall/images_example
