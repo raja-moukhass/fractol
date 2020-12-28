@@ -111,6 +111,9 @@ here is the liste of possible fractals that this program can display:
 </tbody>
 </table>
 
+### key hook 
+<img src="https://github.com/raja-moukhass/fractol/blob/master/images/hook.png" alt="Computer Man" style="width:48px;height:48px;">
+
 ### Output
 The program will render a fractal in a new graphical window!
 ![mandelbrot:](https://github.com/raja-moukhass/fractol/blob/master/images/mandelbrot.png)
