@@ -114,11 +114,10 @@ here is the liste of possible fractals that this program can display:
 ### Output
 The program will render a fractal in a new graphical window!
 ![mandelbrot:](https://github.com/raja-moukhass/fractol/blob/master/images/mandelbrot.png)
-
 ![Example of burningship:](https://github.com/raja-moukhass/fractol/blob/master/images/burningship.png)
-
 ![mandelbrot:](https://github.com/raja-moukhass/fractol/blob/master/images/mandlebrot.png)
 ![mandelbrot:](https://github.com/raja-moukhass/fractol/blob/master/images/julia.png)
+![mandelbrot:](https://github.com/raja-moukhass/fractol/blob/master/images/iteration.png)
 
 
 
