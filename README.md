@@ -1,5 +1,8 @@
-# fractol
-This project is meant to create graphically beautiful fractals
+# 42-Fractol
+Exploring the wonderful world of fractals with the 42 mlx library.
+
+This program will generate a number of escape time fractals with the ability to zoom, cool color animations, and in some cases, mouse interactivity!
+
 ### sources
 - https://github.com/keuhdall/images_example
 - https://github.com/qst0/ft_libgfx
