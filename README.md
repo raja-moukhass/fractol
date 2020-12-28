@@ -47,14 +47,6 @@ $  make fclean
 <td valign="top" align="center"><kbd>&nbsp;space&nbsp;</kbd>
 </tr>
 <tr>
-<td valign="top" height="30px">Increase the global size of the fractal (aka zoom)</td>
-<td valign="top" align="center"><kbd>&nbsp;+&nbsp;</kbd></td>
-</tr>
-<tr>
-<td valign="top" height="30px">Decrease the global size of the fractal (aka unzoom)</td>
-<td valign="top" align="center"><kbd>&nbsp;-&nbsp;</kbd></td>
-</tr>
-<tr>
 <td valign="top" height="30px">Move the fractal to the up (aka move up)</td>
 <td valign="top" align="center"><kbd>&nbsp;▲&nbsp;</kbd></td>
 </tr>
