@@ -20,7 +20,6 @@ here is the liste of possible fractals that this program can display:
 1) julia
 2) Burning Ship
 3) tricorn 
-
 ```
 ### sources
 - https://github.com/keuhdall/images_example
