@@ -12,9 +12,16 @@ after running the project run make
 ```sh
 $  make 
 ```
-you can generate the fractol executable you can run the program with ```./fractol [fractol option```
+you can generate the fractol executable you can run the program with ```./fractol [fractol option]```
 
 here is the liste of possible fractals that this program can display:
+```
+0) mandelbrot
+1) julia
+2) Burning Ship
+3) tricorn 
+
+```
 ### sources
 - https://github.com/keuhdall/images_example
 - https://github.com/qst0/ft_libgfx
