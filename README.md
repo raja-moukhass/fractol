@@ -7,6 +7,14 @@ To generate an executable for this project run make in the root of the project d
 
 This project will only work on MacOS El Capitan/Sierra/HighSierra and even then, no promises!
 
+# how to run the project 
+after running the project run make 
+```sh
+$  make 
+```
+you can generate the fractol executable you can run the program with ```./fractol [fractol option```
+
+here is the liste of possible fractals that this program can display:
 ### sources
 - https://github.com/keuhdall/images_example
 - https://github.com/qst0/ft_libgfx
