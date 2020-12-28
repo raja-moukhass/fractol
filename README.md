@@ -124,10 +124,15 @@ The program will render a fractal in a new graphical window!
 
 
 
-### sources
-- https://github.com/keuhdall/images_example
-- https://github.com/qst0/ft_libgfx
-- http://sdz.tdct.org/sdz/dessiner-la-fractale-de-mandelbrot.html?fbclid=IwAR0abKda4KXEbe7Cle1rxME04v48rH4WvZR10jhebNGEQd2yZVU0bfX2mN0(the most important )
+# sources
+
+### mlx
+- <a href="https://github.com/keuhdall/images_example">A simple example program made for the 42 students going into the graphic branch</a>
+- <a href="https://github.com/qst0/ft_libgfx"> explaining and looking into the 42 School Graphics Library Minilibx</a>
+
+### Tutoriel : Dessiner la fractale de Mandelbrot
+- <a href="http://sdz.tdct.org/sdz/dessiner-la-fractale-de-mandelbrot.html?fbclid=IwAR0abKda4KXEbe7Cle1rxME04v48rH4WvZR10jhebNGEQd2yZVU0bfX2mN0">draw mandelbrot</a>
+
 - http://villemin.gerard.free.fr/Wwwgvmm/Suite/FracComp.htm 
 - https://stackoverflow.com/c/42network/questions/164/166
 - https://www.wikihow.com/Plot-the-Mandelbrot-Set-By-Hand
