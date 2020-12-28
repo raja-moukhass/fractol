@@ -24,7 +24,62 @@ $  make clean
 ```sh
 $  make fclean 
 ```
+## Keyboard shortcuts
 
+<table width="100%">
+<thead>
+<tr>
+<td width="65%" height="60px" align="center" cellpadding="0">
+<strong>Description</strong>
+</td>
+<td width="10%" align="center" cellpadding="0">
+<span style="width:70px">&nbsp;</span><strong>Key(s)</strong><span style="width:50px">&nbsp;</span>
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" height="30px">Close the program (aka quit/exit)</td>
+<td valign="top" align="center"><kbd>&nbsp;esc&nbsp;</kbd></td>
+</tr>
+<tr>
+<td valign="top" height="30px">Enable or disable the mouse controls</td>
+<td valign="top" align="center"><kbd>&nbsp;space&nbsp;</kbd>
+</tr>
+<tr>
+<td valign="top" height="30px">Increase the global size of the fractal (aka zoom)</td>
+<td valign="top" align="center"><kbd>&nbsp;+&nbsp;</kbd></td>
+</tr>
+<tr>
+<td valign="top" height="30px">Decrease the global size of the fractal (aka unzoom)</td>
+<td valign="top" align="center"><kbd>&nbsp;-&nbsp;</kbd></td>
+</tr>
+<tr>
+<td valign="top" height="30px">Move the fractal to the up (aka move up)</td>
+<td valign="top" align="center"><kbd>&nbsp;▲&nbsp;</kbd></td>
+</tr>
+<tr>
+<td valign="top" height="30px">Move the fractal to the down (aka move down)</td>
+<td valign="top" align="center"><kbd>&nbsp;▼&nbsp;</kbd></td>
+</tr>
+<tr>
+<td valign="top" height="30px">Move the fractal to the left (aka width move left)</td>
+<td valign="top" align="center"><kbd>&nbsp;◄&nbsp;</kbd></td>
+</tr>
+<tr>
+<td valign="top" height="30px">Move the fractal to the right (aka move right)</td>
+<td valign="top" align="center"><kbd>&nbsp;►&nbsp;</kbd></td>
+</tr>
+<tr>
+<td valign="top" height="30px">Increase the number of iterations</td>
+<td valign="top" align="center"><kbd>&nbsp;+&nbsp;</kbd></td>
+</tr>
+<tr>
+<td valign="top" height="30px">Decrease the numbre of iterations</td>
+<td valign="top" align="center"><kbd>&nbsp;-&nbsp;</kbd></td>
+</tr>
+</tbody>
+</table>
 
 
 you can generate the fractol executable you can run the program with ```./fractol [fractol option]```
