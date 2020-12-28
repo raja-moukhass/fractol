@@ -134,14 +134,14 @@ The program will render a fractal in a new graphical window!
 
 ### Tutoriel : Dessiner la fractale de Mandelbrot
 - <a href="http://sdz.tdct.org/sdz/dessiner-la-fractale-de-mandelbrot.html?fbclid=IwAR0abKda4KXEbe7Cle1rxME04v48rH4WvZR10jhebNGEQd2yZVU0bfX2mN0">draw mandelbrot</a>
-<a href="https://www.wikihow.com/Plot-the-Mandelbrot-Set-By-Hand">How to Plot the Mandelbrot Set By Hand</a>
+- <a href="https://www.wikihow.com/Plot-the-Mandelbrot-Set-By-Hand">How to Plot the Mandelbrot Set By Hand</a>
 ### zoom
-<a href="https://stackoverflow.com/questions/41796832/smooth-zoom-with-mouse-in-mandelbrot-set-c">smooth zoom with mouse</a>
+- <a href="https://stackoverflow.com/questions/41796832/smooth-zoom-with-mouse-in-mandelbrot-set-c">smooth zoom with mouse</a>
 ### makefile and compilation 
-<a href="https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_makefiles.html#using">Makefile</a>
-<a href="https://www.tenouk.com/ModuleW.html">COMPILER, ASSEMBLER, LINKER AND LOADER:
+- <a href="https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_makefiles.html#using">Makefile</a>
+- <a href="https://www.tenouk.com/ModuleW.html">COMPILER, ASSEMBLER, LINKER AND LOADER:
 A BRIEF STORY (TOOOOOOOP)</a>
-<a href="https://www.geeksforgeeks.org/cc-preprocessors/">C/C++ Preprocessors</a>
+- <a href="https://www.geeksforgeeks.org/cc-preprocessors/">C/C++ Preprocessors</a>
 
 ### videos sources
 - https://youtu.be/Y4ICbYtBGzA (FR)
