@@ -144,12 +144,11 @@ A BRIEF STORY (TOOOOOOOP)</a>
 - <a href="https://www.geeksforgeeks.org/cc-preprocessors/">C/C++ Preprocessors</a>
 
 ### videos sources
-- https://youtu.be/Y4ICbYtBGzA (FR)
-- https://youtu.be/iFA3g_4myFw (FR)
-- https://youtu.be/2JUAojvFpCo (EN)
-- https://www.youtube.com/watch?v=0YaYmyfy9Z4&ab_channel=fenby1976 (this is the Greatest video you can watch)
+- <a href="https://www.youtube.com/watch?v=0YaYmyfy9Z4&ab_channel=fenby1976">what the Mandelbrot set is, assuming only basic mathematical knowledge</a>
+- <a href="https://www.youtube.com/watch?v=NGMRB4O922I&t=15s&ab_channel=Numberphile">Famously beautiful, the Mandelbrot Set is all about complex numbers. Featuring Dr Holly Krieger from MIT</a>
+- <a href="https://www.youtube.com/watch?v=FFftmWSzgmk&t=425s&ab_channel=Numberphile">Featuring Ben Sparks discussing the Mandelbrot Set (and Julia Sets). Catch a more in-depth </a>
+- <a href="https://www.youtube.com/watch?v=fAsaSkmbF5s&t=605s&ab_channel=TheCodingTrain">In this coding challenge,programing from the Julia Set fractal in Processing (Java).</a>
 
-- https://youtu.be/MwjsO6aniig (EN)
 
 
 -https://github.com/abhisheknaiidu/awesome-github-profile-readme#dynamic-realtime- (github )
