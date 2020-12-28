@@ -15,9 +15,9 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include "../libft/libft.h"
-# include "mlx.h"
 # include "math.h"
 # include "pthread.h"
+#include "../miniLibX/mlx.h"
 # define WIDTH 600
 # define HEIGHT 600
 # define THREAD_WIDTH 5

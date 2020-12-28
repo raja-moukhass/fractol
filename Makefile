@@ -17,7 +17,8 @@ INC_DIR = ./includes/
 INC = ./includes/fractol.h
 OB = $(SRC:.c=.o)
 NAME =  fractol
-LIBFLAGS = -L ./libft -lft -lpthread -lmlx -framework OpenGL -framework AppKit
+LIBFLAGS = -L ./libft -lft -lpthread -L ./miniLibX -lmlx -framework OpenGL -framework AppKit
+
 all : $(NAME)
 
 $(NAME): $(OB)
