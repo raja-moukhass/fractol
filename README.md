@@ -135,7 +135,7 @@ The program will render a fractal in a new graphical window!
 - <a href="https://qst0.github.io/ft_libgfx/man_mlx_new_window.html"> man mlx</a>
 
 
-### Tutoriel : Dessiner la fractale de Mandelbrot
+### Tutoriel : Draw mandelbrot fractal tutorial 
 - <a href="http://sdz.tdct.org/sdz/dessiner-la-fractale-de-mandelbrot.html?fbclid=IwAR0abKda4KXEbe7Cle1rxME04v48rH4WvZR10jhebNGEQd2yZVU0bfX2mN0">draw mandelbrot</a>
 - <a href="https://www.wikihow.com/Plot-the-Mandelbrot-Set-By-Hand">How to Plot the Mandelbrot Set By Hand</a>
 ### zoom
